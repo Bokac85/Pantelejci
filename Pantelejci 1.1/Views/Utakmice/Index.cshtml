@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Pantelejci_1._1.Models.Utakmica>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.vremeUtakmice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Domacin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusUtakmice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.vremeUtakmice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Domacin.naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gost.naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusUtakmice)
+        </td>
+        <td>
+            @Html.ActionLink("Dodaj pogodak", "DodajPogodak", new { id = item.ID }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

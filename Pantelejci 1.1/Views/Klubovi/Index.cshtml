@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Pantelejci_1._1.Models.Klub>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.grad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.godinaOsnivanja)
+        </th>
+        <th>@Html.DisplayNameFor(model => model.Stadion)</th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.grad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.godinaOsnivanja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Stadion.naziv)
+        </td>
+        <td>
+            <img src="@Url.Content(Path.Combine("~/Content/Images/Klubovi/", item.SlikaKluba))" alt="Image" style="height: 96px;" />
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

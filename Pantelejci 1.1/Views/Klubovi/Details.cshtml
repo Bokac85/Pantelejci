@@ -1,0 +1,44 @@
+﻿@model Pantelejci_1._1.Models.Klub
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Klub</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.naziv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.naziv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.grad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.grad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.godinaOsnivanja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.godinaOsnivanja)
+        </dd>
+        <dd>
+            <img src="@Url.Content(Path.Combine("~/Content/Images/Klubovi/", Model.SlikaKluba))" alt="Image" style="height: 96px;" />
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

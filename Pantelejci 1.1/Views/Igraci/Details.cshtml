@@ -1,0 +1,63 @@
+﻿@model Pantelejci_1._1.Models.Igrac
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Igrac</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prezime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prezime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.godinaRodjenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.godinaRodjenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pozicija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pozicija)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.brojDresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brojDresa)
+        </dd>
+               
+
+    </dl>
+    <dd>
+        <img src="@Url.Content(Path.Combine("~/Content/Images/Igraci/", Model.SlikaIgraca))" alt="Image" style="height: 96px;" />
+    </dd>
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Pantelejci_1._1.Models.Igrac>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Pretraga: @Html.TextBox("Search")
+        Klub: @Html.DropDownList("KlubID", new SelectList(ViewBag.Klubovi, "Value", "Text"), "Izaberi klub", new { })
+        Pozicija: @Html.DropDownList("Pozicija", new SelectList(Enum.GetValues(typeof(Pantelejci_1._1.Models.pozicija))), "Izaberi poziciju", new { })
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prezime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.godinaRodjenja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pozicija)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.brojDresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Klub)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prezime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.godinaRodjenja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pozicija)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.brojDresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Klub.naziv)
+        </td>
+        <td>
+            <img src="@Url.Content(Path.Combine("~/Content/Images/Igraci/", item.SlikaIgraca))" alt="Image" style="height: 96px;" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

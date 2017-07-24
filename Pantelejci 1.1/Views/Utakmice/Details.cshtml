@@ -1,0 +1,42 @@
+﻿@model Pantelejci_1._1.Models.Utakmica
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Utakmica</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vremeUtakmice)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Domacin)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Gost)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusUtakmice)
+        </dt>
+         <dd>
+            @Html.DisplayFor(model => model.vremeUtakmice)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Domacin)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Gost)
+        </dd>
+        <dd>
+            @Html.DisplayFor(model => model.StatusUtakmice)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

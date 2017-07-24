@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pantelejci 1.1", "Pantelejci 1.1\Pantelejci 1.1.csproj", "{63D80B0E-1BF1-427D-B3A8-FE3204929AF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pantelejci 1.1.Tests", "Pantelejci 1.1.Tests\Pantelejci 1.1.Tests.csproj", "{1DD72F07-7A02-4750-A38A-23CEE6C257DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63D80B0E-1BF1-427D-B3A8-FE3204929AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D80B0E-1BF1-427D-B3A8-FE3204929AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D80B0E-1BF1-427D-B3A8-FE3204929AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D80B0E-1BF1-427D-B3A8-FE3204929AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DD72F07-7A02-4750-A38A-23CEE6C257DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD72F07-7A02-4750-A38A-23CEE6C257DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD72F07-7A02-4750-A38A-23CEE6C257DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD72F07-7A02-4750-A38A-23CEE6C257DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
