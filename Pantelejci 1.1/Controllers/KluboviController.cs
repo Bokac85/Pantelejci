@@ -97,7 +97,7 @@ namespace Pantelejci_1._1.Controllers
             {
                 return HttpNotFound();
             }
-            //SetStadioniVariable();
+            SetStadioniVariable();
 
             return View(klub);
         }
@@ -107,18 +107,22 @@ namespace Pantelejci_1._1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,naziv,grad,godinaOsnivanja")] Klub klub)
+        // public ActionResult Edit([Bind(Include = "ID,naziv,grad,godinaOsnivanja")] Klub klub, int stadionID) //
+        public ActionResult Edit(int id, int stadionID)
         {
-            if (ModelState.IsValid)
+            Klub klub = db.Klubovi.Find(id);
+            if (TryUpdateModel(klub, new string[] { "naziv", "grad", "godinaOsnivanja" }))
             {
-                db.Entry(klub).State = EntityState.Modified;
+                klub.Stadion = db.Stadioni.Find(stadionID);   
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            SetStadioniVariable();
             return View(klub);
         }
-
-        // GET: Klubovi/Delete/5
+        
+              // GET: Klubovi/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)

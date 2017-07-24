@@ -24,6 +24,35 @@
                 @Html.ValidationMessageFor(model => model.vremeUtakmice, "", new { @class = "text-danger" })
             </div>
         </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Domacin.Stadion.naziv, "Stadion", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Domacin.Stadion.naziv, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Domacin.Stadion.naziv, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Domacin, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("domacinID", new SelectList(ViewBag.Klubovi, "Value", "Text"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Domacin, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Gost, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("gostID", new SelectList(ViewBag.Klubovi, "Value", "Text"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Gost, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StatusUtakmice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.StatusUtakmice, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.StatusUtakmice, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

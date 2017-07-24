@@ -57,7 +57,7 @@ namespace Pantelejci_1._1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,vremeUtakmice")] Utakmica utakmica, int domacinID, int gostID)
+        public ActionResult Create([Bind(Include = "ID,vremeUtakmice,StatusUtakmice")] Utakmica utakmica, int domacinID, int gostID)
         {
             if (ModelState.IsValid)
             {
@@ -84,6 +84,7 @@ namespace Pantelejci_1._1.Controllers
             {
                 return HttpNotFound();
             }
+            SetKluboviVariable();
             return View(utakmica);
         }
 
@@ -92,16 +93,22 @@ namespace Pantelejci_1._1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,vremeUtakmice")] Utakmica utakmica)
+        //public ActionResult Edit([Bind(Include = "ID,vremeUtakmice,StatusUtakmice")] Utakmica utakmica, int domacinID, int gostID)
+         public ActionResult Edit(int ID, int domacinID, int gostID)
         {
-            if (ModelState.IsValid)
+            Utakmica utakmica = db.Utakmice.Find(ID);
+            if (TryUpdateModel(utakmica, new string[] { "vremeUtakmice", "StatusUtakmice"}))
             {
-                db.Entry(utakmica).State = EntityState.Modified;
+                utakmica.Domacin = db.Klubovi.Find(domacinID);
+                utakmica.Gost = db.Klubovi.Find(gostID);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            SetKluboviVariable();
             return View(utakmica);
-        }
+}
+
+
 
         // GET: Utakmice/Delete/5
         public ActionResult Delete(int? id)

@@ -15,6 +15,9 @@
             @Html.DisplayNameFor(model => model.vremeUtakmice)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Domacin.Stadion)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Domacin)
         </th>
         <th>
@@ -30,6 +33,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.vremeUtakmice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Domacin.Stadion.naziv)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Domacin.naziv)

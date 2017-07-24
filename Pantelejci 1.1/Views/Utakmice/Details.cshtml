@@ -13,24 +13,30 @@
         <dt>
             @Html.DisplayNameFor(model => model.vremeUtakmice)
         </dt>
+        <dd>
+            @Html.DisplayFor(model => model.vremeUtakmice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Domacin.Stadion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Domacin.Stadion.naziv)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Domacin)
         </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Domacin.naziv)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Gost)
         </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Gost.naziv)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.StatusUtakmice)
-        </dt>
-         <dd>
-            @Html.DisplayFor(model => model.vremeUtakmice)
-        </dd>
-        <dd>
-            @Html.DisplayFor(model => model.Domacin)
-        </dd>
-        <dd>
-            @Html.DisplayFor(model => model.Gost)
-        </dd>
+        </dt>    
         <dd>
             @Html.DisplayFor(model => model.StatusUtakmice)
         </dd>
